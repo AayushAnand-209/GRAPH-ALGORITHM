@@ -1,0 +1,31 @@
+Graph 
+it is non linear data structure
+its like a network
+
+APPLICATIONS
+1) Shortest paths in google maps
+  each location : landmark/cities as vertices
+  and roads as edges
+2) Social Network
+ V: people[p1,p2,p3..]
+ E: connections
+ generate news feed
+ find mutual friend
+ 
+3) Circuit Design
+minimum lenght of wire that supplies current to all nodes 
+V: resistors
+E:wire
+
+
+4) Router algo
+V: router across algorithm
+E: time taken by pkts to flow
+
+5) Delivery route for vans
+6) Resolving dependancies
+V: software installation
+E: Dependencies between various tasks
+7) used in deep leanring also
+
+
