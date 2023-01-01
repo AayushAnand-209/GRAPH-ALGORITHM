@@ -1,0 +1,91 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+#include <map>
+#include <list>
+#include <queue>
+using namespace std;
+class Graph{
+  map<int,list<int>> l;
+  
+  public:
+  
+  void addEdges(int x,int y){
+      l[x].push_back(y);
+      l[y].push_back(x);
+  }
+  
+  void printAdj()
+  {
+      for(auto k:l)
+      {
+          cout<<k.first<<"-->";
+          list<int> li=k.second;
+          for(auto i : li)
+          {
+              cout<<i<<",";
+              
+          }
+          cout<<endl;
+      }
+  }
+  
+  void BFS(int src)
+  {
+      queue<int> q;
+      map<int,bool> ma;
+      q.push(src);
+      ma[src]=true;
+      
+      while(!q.empty()){
+          int fi=q.front();
+          q.pop();
+          cout<<fi<<",";
+          
+          for(auto node: l[fi])
+          {
+              if(!ma[node])
+              {
+                  q.push(node);
+                  ma[node]=true;
+              }
+          }
+          
+          
+          
+      }
+      
+      
+      
+  }
+
+  
+    
+};
+int main()
+{
+    Graph g;
+    g.addEdges(0,1);
+    g.addEdges(0,3);
+    g.addEdges(1,2);
+    g.addEdges(2,3);
+    g.addEdges(3,4);
+    g.addEdges(4,5);
+    g.printAdj();
+    cout<<"searching";
+    g.BFS(5);
+    
+    
+    
+    
+    
+    
+
+    return 0;
+}
